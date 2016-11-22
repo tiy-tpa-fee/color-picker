@@ -7,29 +7,22 @@
     <link rel="stylesheet" href="/screen.css">
   </head>
   <body>
-<<<<<<< HEAD
     <h1>HSL Color Picker</h1>
     <h2>hsl ()</h2>
+    <section class="picker">
     <figure></figure>
-    <ul>
-      <li><input type="range" name="hue" min="0" max="360" value="180"></li>
-      <li><input type="range" name="saturation" min="0" max="100" value="50"></li>
-      <li><input type="range" name="lightness" min="0" max="100" value="50"></li>
-=======
-
-    <h1>HSL Color Picker</h1>
-    <h2>hsl()</h2>
-    <figure></figure>
-    <ul>
-      <li><input type="range" name="hue" min="0" max="360" value="180"></li>
-      <li><input type="range" name="saturation" min="0" max="100" value="100"></li>
-      <li><input type="range" name="lightness" min="0" max="100" value="80"></li>
->>>>>>> e5bbaa748f45e016d8e96f11a4ae783c4e52e4bd
-      <li><input type="range" name="alpha" min="0" max="1" step="0.01" value="1"></li>
-    </ul>
-    <button>Random</button>
-    <button>Save</button>
-    <ul>
+      <ul>
+        <li>H <input type="range" name="hue" min="0" max="360" value="180"></li>
+        <li>S <input type="range" name="saturation" min="0" max="100" value="100"></li>
+        <li>L <input type="range" name="lightness" min="0" max="100" value="80"></li>
+        <li>a <input type="range" name="alpha" min="0" max="1" step="0.01" value="1"></li>
+      </ul>
+    </section>
+    <section class="actions">
+      <button>Random</button>
+      <button>Save</button>
+    </section>
+    <ul class="library">
       <li><figure></figure></li>
     </ul>
     <script src="/main.js" charset="utf-8"></script>
