@@ -19,12 +19,26 @@ const randomize = () => {
   update()
 }
 
+const save = () => {
+  const hue = qs('input[name=hue]').value
+  const saturation = qs('input[name=saturation]').value
+  const lightness = qs('input[name=lightness]').value
+  const alpha = qs('input[name=alpha]').value
+  const hsla = `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`
+  const li = document.createElement('li')
+  const figure = document.createElement('figure')
+  figure.style.backgroundColor = hsla
+  li.appendChild(figure)
+  qs('ul.library').appendChild(li)
+}
+
 const main = () => {
   const inputs = qsa('.picker input')
   for (var i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('input', update)
   }
   qs('.actions .random').addEventListener('click', randomize)
+  qs('.actions .save').addEventListener('click', save)
   update()
 }
 
