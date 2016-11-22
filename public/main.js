@@ -10,15 +10,21 @@ const update = () => {
   qs('h2').textContent = hsla
   qs('.picker figure').style.backgroundColor = hsla
 }
+
+const randomize = () => {
+  qs('input[name=hue]').value = Math.round(Math.random() * 360)
+  qs('input[name=saturation]').value = Math.round(Math.random() * 100)
+  qs('input[name=lightness]').value = Math.round(Math.random() * 100)
+  qs('input[name=alpha]').value = 1
+  update()
+}
+
 const main = () => {
   const inputs = qsa('.picker input')
   for (var i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('input', update)
   }
-  /*qs('input[name=hue]').addEventListener('input', update)
-  qs('input[name=saturation]').addEventListener('input', update)
-  qs('input[name=lightness]').addEventListener('input', update)
-  qs('input[name=alpha]').addEventListener('input', update)*/
+  qs('.actions .random').addEventListener('click', randomize)
   update()
 }
 
