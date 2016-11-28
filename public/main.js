@@ -30,6 +30,11 @@ const save = () => {
   figure.style.backgroundColor = hsla
   li.appendChild(figure)
   qs('ul.library').appendChild(li)
+  li.addEventListener('dblclick', removeItem)
+}
+
+const removeItem = (event) => {
+  event.target.remove()
 }
 
 const main = () => {
@@ -39,7 +44,7 @@ const main = () => {
   }
   qs('.actions .random').addEventListener('click', randomize)
   qs('.actions .save').addEventListener('click', save)
-  update()
+  randomize()
 }
 
 document.addEventListener('DOMContentLoaded', main)
